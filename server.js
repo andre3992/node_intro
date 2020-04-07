@@ -6,7 +6,11 @@ const server = http.createServer(function(request, response) {
         response.writeHead(200);
         response.end('goodbye');
     } else if (request.url == '/error') {
-        response.end('HTTP/1.1 500 Internal Server Error');
+        response.writeHead(500);
+        let error = {
+            "error": "server error"
+        }
+        response.end(JSON.stringify(error))
     } else
         response.writeHead(200);
     response.end('Hello World');
