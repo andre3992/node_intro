@@ -17,6 +17,6 @@ const server = http.createServer(function(request, response) {
 });
 
 
-server.listen(3000);
+server.listen(80);
 
 console.log('Server address: http://localhost:3000');
